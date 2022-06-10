@@ -92,3 +92,24 @@ UNIONS
 -Unions can contain an object of one type at one time, and an object of a different type at a different time,
 but never both objects at the same time. primarily used to save memory.
 
+=================================
+TYPE QUALIFIERS
+=================================
+-Three type Qualifies const, volatile, restrict 
+
+-const makes a variable constant, unchangeable without errors. You can do some workarounds to change a const
+variable but it is not reccommended.
+
+-volatile. Static volatile qualified objects are used to model memory-mapped input/output(I/O) ports,
+and static constant volatile-qualified objects model memory-mapped input ports such as a real-time clock.
+    -Values stored in volatile objects may change without the knowledge of the compiler. for example, every time
+    the value from a real time clock is read, it may change, even if the value has not been to by the c program.
+    using a volatile type lets the compiler know that the value may change, and ensures that every access to the
+    real-time clock occurs
+
+-restrict-qualified pointers are used to promote optimizations.
+
+-object frequently cannot be fully optimized because of potential aliasing, which occurs when more than one pointer
+refers to the same object. aliasing can inhibit optimizations, because the compiler can't tell if portions of an object
+can change values when another apparently unrelated object is modified.
+    -you must ensure that the pointers do not refer to overlapping memory to prevent undefined behavior.
