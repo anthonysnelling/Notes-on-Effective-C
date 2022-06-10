@@ -1,0 +1,1 @@
+This folder is just pretty much me practicing some leet code problems in C.

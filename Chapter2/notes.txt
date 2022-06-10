@@ -69,3 +69,17 @@ a nonnegative integral power of two.
 
 - An object type imposes a default aligment requirement on every object of that type: a stricter
 aligment (a larger power of two) can be requested using the aligment specifier(_Alignas).   
+
+=================================
+STRUCTS
+=================================
+- Structs contain sequentially allocated member objects. Each object has its own name and may have a distinct type
+unlike arrays, which must all be of the same type.
+
+- structs are useful for declaring collections of related objects and represent things like, a customer, or
+personnel record.
+
+- are especially useful for grouping objects that are frequently passed together as arguments to a function,
+so you don't have to pass individual objects separately.
+
+- can use -> to point to one of its members
