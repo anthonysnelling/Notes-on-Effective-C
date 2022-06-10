@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <string.h>
 
 struct sigrecord {
     int signum;
@@ -15,5 +17,9 @@ int main(void){
     sigline_p->signum = 5;
     strcpy(sigline_p->signame, "SIGINT");
     strcpy(sigline_p->sigdesc, "Interrupt from keyboard");
+
+    printf("signum: %d \n", sigline.signum);
+    printf("signame: %s \n", sigline.signame);
+    printf("sigdesc: %s \n", sigline.sigdesc);
 }
 
