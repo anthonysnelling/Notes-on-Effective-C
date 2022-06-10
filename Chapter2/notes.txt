@@ -83,3 +83,12 @@ personnel record.
 so you don't have to pass individual objects separately.
 
 - can use -> to point to one of its members
+
+=================================
+UNIONS
+=================================
+-similar to structures, except that the memory used by the member objects overlaps.
+
+-Unions can contain an object of one type at one time, and an object of a different type at a different time,
+but never both objects at the same time. primarily used to save memory.
+
