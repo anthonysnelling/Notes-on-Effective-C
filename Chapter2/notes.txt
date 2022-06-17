@@ -113,3 +113,35 @@ and static constant volatile-qualified objects model memory-mapped input ports s
 refers to the same object. aliasing can inhibit optimizations, because the compiler can't tell if portions of an object
 can change values when another apparently unrelated object is modified.
     -you must ensure that the pointers do not refer to overlapping memory to prevent undefined behavior.
+
+
+=================================
+ARITHMETIC TYPES
+=================================
+-All integer types except char, signed char, unsigned char may contain unused bit called padding.
+
+-Padding allows implementations to accommodate hardware quirks such as skipping over a sign bit in the middle of a 
+multi word representation, or to optimally align with a target architecture
+
+-the number of bits used to represent a value of a given type, excluding padding but including the sign, is called
+the 'WIDTH', often denoted as N.
+
+'PRECISION' is the number of bits used to represent values, excluding sign and padding bits.
+
+-<limits.h> header file provides the min and max representable value for various integer types.
+    -representable values are ones that can be represented in the number of bits available
+    to an object of that type.
+
+-Values that cannot be represented will be diagnosed by the compiler or converted to a representable
+but different (incorrect) value
+
+-max, min and width values are determined by compilers.
+
+-integers are by default signed, except char, chars you can declare as signed or unsigned,
+ints you can only declare unsigned or omit.
+
+-'WRAPAROUND' occurs when you perform arithmetic operations that result in values too small or too large
+to be represented as a particular unsigned integer type. the value essentially either rollsover to the max or min values
+of the type
+
+
